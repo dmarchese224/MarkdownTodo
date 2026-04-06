@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Todo</title>
+    <link rel="apple-touch-icon" href="/MarkdownTodo/icon.png">
+    <meta name="theme-color" content="#0f172a">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/MarkdownTodo/assets/index-BXyqZ9Gp.js"></script>
+    <link rel="stylesheet" crossorigin href="/MarkdownTodo/assets/index-Bz_2iAuE.css">
+  <link rel="manifest" href="/MarkdownTodo/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/MarkdownTodo/registerSW.js"></script></head>
+  <body>
+    <div id="app">
+      <!-- Workspace Picker -->
+      <div id="welcome-screen" class="active">
+        <h1>Markdown Todos</h1>
+        <p>Select a local folder or cloud-synced directory to serve as your workspace.</p>
+        <button id="btn-open-workspace">Open Workspace Folder</button>
+      </div>
+
+      <!-- Main Interface -->
+      <div id="main-interface">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+        <!-- Sidebar -->
+        <aside id="sidebar">
+          <div class="sidebar-header">
+            <h2>Lists</h2>
+            <button id="btn-new-list" title="New List">+</button>
+          </div>
+          <ul id="list-directory"></ul>
+          
+          <div class="sidebar-header archive-header">
+            <h2>Archive</h2>
+          </div>
+          <ul id="archive-directory"></ul>
+        </aside>
+
+        <!-- Todo List View -->
+        <main id="list-view">
+          <header class="list-header">
+            <button id="btn-toggle-sidebar" class="mobile-only">☰</button>
+            <h1 id="current-list-title">Select a list</h1>
+          </header>
+          
+          <div id="tasks-container"></div>
+          
+          <div class="add-task-container">
+            <input type="text" id="new-task-input" placeholder="Add a new task..." />
+            <button id="btn-add-task">Add</button>
+          </div>
+        </main>
+
+        <!-- Task Edit Panel (Slide out) -->
+        <div id="task-panel" class="panel-hidden">
+          <div class="panel-header">
+            <h3>Edit Task</h3>
+            <button id="btn-close-panel">×</button>
+          </div>
+          <div class="panel-content">
+            <textarea id="task-edit-title" rows="2"></textarea>
+            
+            <label for="task-due-date">Due Date</label>
+            <input type="datetime-local" id="task-due-date" />
+
+            <label for="task-notes">Notes</label>
+            <textarea id="task-notes" rows="10"></textarea>
+            
+            <button id="btn-save-task">Save Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
